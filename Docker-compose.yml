@@ -1,26 +1,15 @@
 version: "3"
 
-services:
-  mysql:
-    container_name: mysql-container
-    image: mysql:5
-    restart: always
-    volumes:
-      - ./data:/data/db
-    ports:
-      - "27017:27017"
-
+services: 
   api:
-    container_name: signup-course-api-container
+    container_name: signup-manager-api-container
     build: .
-    image: signup-course-api
+    image: signup-manager-api
     restart: always
     command: yarn debugs
     volumes:
-      - ./dist:/usr/src/signup-course-api/dist
-      - ./package.json:/usr/src/signup-course-api/package.json
+      - ./dist:/usr/src/signup-manager-api/dist
+      - ./package.json:/usr/src/signup-manager-api/package.json
     ports:
       - "5353:5353"
       - "9222:9222"
-    links:
-      - mysql
