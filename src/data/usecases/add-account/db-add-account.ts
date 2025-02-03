@@ -1,9 +1,9 @@
 import {
   AddAccount,
   AddAccountModel,
-  AccountModel,
   Hasher,
   AddAccountRepository,
+  AccountModel,
 } from "./db-add-account-protocols";
 
 export class DbAddAccount implements AddAccount {
