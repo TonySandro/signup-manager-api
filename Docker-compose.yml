@@ -1,15 +1,17 @@
-version: "3"
+version: "3.8"
 
-services: 
+services:
   api:
-    container_name: signup-manager-api-container
-    build: .
-    image: signup-manager-api
+    container_name: signup-container
+    build:
+      context: .
+    image: node:20
+    working_dir: /usr/src/signup-manager-api
     restart: always
-    command: yarn debugs
-    volumes:
-      - ./dist:/usr/src/signup-manager-api/dist
-      - ./package.json:/usr/src/signup-manager-api/package.json
+    command: >
+      sh -c "npm install --omit=dev && npm run start"
     ports:
-      - "5353:5353"
-      - "9222:9222"
+      - "5051:5051"
+    volumes:
+      - ./dist:/usr/src/signup-manager-api/dist/
+      - ./package.json:/usr/src/signup-manager-api/package.json
