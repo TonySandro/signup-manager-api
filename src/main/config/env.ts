@@ -1,5 +1,4 @@
 export default {
-  baseUrl: process.env.BASE_URL || "http://localhost:5053/api",
-  mongoUrl: process.env.MONGO_URL || "mongodb://mongo:27017/signup-api",
+  baseUrl: process.env.BASE_URL || "http://172.20.0.4:5053/api",
   port: process.env.PORT || 5051,
 };
