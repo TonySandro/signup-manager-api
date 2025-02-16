@@ -1,5 +1,9 @@
 version: "3.8"
 
+networks:
+  course-network:
+    external: true
+
 services:
   api:
     container_name: signup-container
@@ -12,6 +16,8 @@ services:
       sh -c "npm install --omit=dev && npm run start"
     ports:
       - "5051:5051"
+    networks:
+      - course-network
     volumes:
       - ./dist:/usr/src/signup-manager-api/dist/
       - ./package.json:/usr/src/signup-manager-api/package.json
