@@ -15,15 +15,20 @@ export class AccountAxiosRequest
 {
   async add(account: AddAccountModel): Promise<AccountModel> {
     const accountResponse = await axiosAdapter.post("/create-account", account);
-
     return accountResponse.data;
   }
 
   async loadByEmail(email: string): Promise<AccountModel> {
-    return null;
+    const response = await axiosAdapter.get(
+      `/get-account-by-email?email=${encodeURIComponent(email)}`
+    );
+    return response.data;
   }
 
   async updateAccessToken(id: string, token: string): Promise<void> {
-    return null;
+    await axiosAdapter.patch("/update-access-token", {
+      id,
+      accessToken: token,
+    });
   }
 }
