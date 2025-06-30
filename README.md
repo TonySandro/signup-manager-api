@@ -1,2 +1,2 @@
-# signup-course-api
+# SIGNUP-MANAGER
  
