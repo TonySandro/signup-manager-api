@@ -1,4 +1,4 @@
 export default {
-  baseUrl: "http://user-manager-container:5053/api",
+  baseUrl: "http://localhost:5053/api",
   port: process.env.PORT || 5051,
 };
