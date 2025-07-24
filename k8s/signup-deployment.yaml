@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: signup-manager
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: signup-manager
+  template:
+    metadata:
+      labels:
+        app: signup-manager
+    spec:
+      containers:
+        - name: signup-manager
+          image: signup-manager:local
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 5051
+          env:
+            - name: PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: signup-config
+                  key: PORT
