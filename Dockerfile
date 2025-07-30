@@ -20,4 +20,4 @@ COPY package*.json ./
 
 EXPOSE 5051
 
-CMD ["npm", "run", "start", "--", "0.0.0.0"]
+CMD ["node", "dist/main/server.js"]

@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: signup-manager
-          image: signup-manager:local
+          image: signup-manager-api:local
           imagePullPolicy: Never
           ports:
             - containerPort: 5051
