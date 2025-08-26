@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: signup-config
+data:
+  PORT: "5051"
+  baseUrl: "http://user-manager-service:5053/api"
