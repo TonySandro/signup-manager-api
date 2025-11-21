@@ -10,6 +10,7 @@ export const checkUserManagerConnection = async (): Promise<boolean> => {
 
     return response.status === 200;
   } catch {
+    console.log("checkUserManagerConnection Err");
     return false;
   }
 };

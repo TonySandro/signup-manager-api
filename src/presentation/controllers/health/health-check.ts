@@ -22,6 +22,7 @@ export class HealthCheckController implements Controller {
         timestamp: new Date(),
       });
     } catch (error) {
+      console.log("Err");
       return serverError(error);
     }
   }
